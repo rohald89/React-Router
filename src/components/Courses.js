@@ -1,17 +1,25 @@
 import React from 'react';
+import { NavLink, Route } from 'react-router-dom';
+
+import CSS from './courses/CSS';
+import HTML from './courses/HTML';
+import JavaScript from './courses/JavaScript';
 
 const Courses = () => (
   <div className="main-content courses">
     <div className="course-header group">
       <h2>Courses</h2> 
       <ul className="course-nav">
-        <li><a href='/courses/html'>HTML</a></li>
-        <li><a href='/courses/css'>CSS</a></li>
-        <li><a href='/courses/javascript'>JavaScript</a></li>
+        <li><NavLink to='/courses/html'>HTML</NavLink></li>
+        <li><NavLink to='/courses/css'>CSS</NavLink></li>
+        <li><NavLink to='/courses/javascript'>JavaScript</NavLink></li>
       </ul>
     </div>
     
     {/* Write routes here... */}
+    <Route path='/courses/css' render={ () => <CSS/>} /> 
+    <Route path='/courses/html' render={ () => <HTML/>} /> 
+    <Route path='/courses/javascript' render={ () => <JavaScript/>} /> 
   </div>
 );
 
