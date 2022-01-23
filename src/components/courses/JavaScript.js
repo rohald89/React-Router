@@ -1,8 +1,9 @@
 import React from 'react';
 import Course from './Course';
+import { JSCourses } from '../../data/courses';
 
-const CourseContainer = ({ data }) => {
-  let courses = data.map((course) => {
+const JavaScript = (props) => {
+  let courses = JSCourses.map((course) => {
     return <Course title={course.title}
                    desc={course.description}
                    img={course.img_src}
@@ -17,4 +18,4 @@ const CourseContainer = ({ data }) => {
   );
 }
 
-export default CourseContainer;
+export default JavaScript;
