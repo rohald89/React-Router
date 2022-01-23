@@ -13,7 +13,8 @@ const App = () => (
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />}/>
-        <Route exact path="about" element={<About />}/>
+        <Route exact path="about" element={<About title="About" />}/>
+        {/* No longer need the render prop to pass in props to the component, you can just pass them right in there with using `element` prop */}
         <Route exact path="teachers" element={<Teachers />}/>
         <Route exact path="courses" element={<Courses />} />
       </Routes>
