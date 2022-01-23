@@ -18,16 +18,16 @@ const App = () => (
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<About title="About" />} />
         {/* No longer need the render prop to pass in props to the component, you can just pass them right in there with using `element` prop */}
+        <Route path="about" element={<About title="About" />} />
         <Route path="teachers">
           <Route index element={<Teachers />} />
           <Route path=":topic/:name" element={<Featured />} />
         </Route>
-        <Route exact path="courses" element={<Courses />} >
-          {/* Nested routes for /courses/:topic */}
-          <Route index element={<Navigate to="html" />} />
+        <Route path="courses" element={<Courses />} >
           {/* When going to the index of the /courses route Navigate the user to courses/html */}
+          <Route index element={<Navigate to="html" />} />
+          {/* Nested routes for /courses/:topic */}
           <Route path="html" element={<CourseContainer data={HTMLCourses} />} />
           <Route path="css" element={<CourseContainer data={CSSCourses} />} />
           <Route path="javascript" element={<CourseContainer data={JSCourses} />} />

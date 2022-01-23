@@ -16,9 +16,10 @@ const Courses = () => {
       </div>
       
       
-      <Outlet />
       {/* Routes are now nested in their parent route, they are now all available in App.js */}
       {/* This Outlet component lets React know where to render the child components */}
+      <Outlet />
+      
     </div>
 
   )
